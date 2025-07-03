@@ -1,4 +1,6 @@
-/* Structure for tree and linked list
+#include<bits/stdc++.h>
+using namespace std;
+
 
 struct Node
 {
@@ -11,7 +13,7 @@ struct Node
         left = right = NULL;
     }
 };
- */
+
 
 // This function should return head to the DLL
 class Solution {
