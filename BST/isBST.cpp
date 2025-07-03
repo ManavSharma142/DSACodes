@@ -1,3 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Node
+{
+   public:
+    int data;
+    Node *left;
+    Node *right;
+
+    Node(int x){
+        data = x;
+        left = NULL;
+        right = NULL;
+    }
+}; 
 class Solution {
   public:
     // Function to check whether a Binary Tree is BST or not.
