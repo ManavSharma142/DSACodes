@@ -66,3 +66,35 @@ class Solution {
     }
 
 };
+//using inorder
+Node* flatten(Node* root) {
+    vector<int> ans;
+
+    // get inorder of root in ans
+
+    Node* newRoot = new Node(ans[0]);
+    Node* curr = root;
+
+    for(int i = 1; i < ans.size(); i++) {
+        Node* temp = new Node(ans[i]);
+        curr->left = NULL;
+        curr->right = temp;
+        curr = temp;
+
+    }
+    curr->left = curr->right = NULL;
+    return newRoot; 
+}
+
+
+// another way : 
+void BSTtoLL(Node*& root, Node*& head) {
+        if(!root) return;
+        
+        BSTtoLL(root->right, head);
+        root->right = head;
+        if(head) head->left = root;
+        
+        head = root;
+        BSTtoLL(root->left, head);
+    } 
