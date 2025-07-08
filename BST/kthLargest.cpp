@@ -14,6 +14,8 @@ public:
         right = NULL;
     }
 };
+
+// aproach 1 reverse inorder
 class Solution {
   public:
     int Inorder(Node* root, int& count, int key) {
@@ -38,3 +40,6 @@ class Solution {
     
     }
 };
+
+//approach 2 : morris traversal
+
