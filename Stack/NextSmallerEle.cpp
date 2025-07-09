@@ -23,3 +23,21 @@ vector<int> nextSmallerElement(vector<int> &arr, int n)
     }
     return ans ; 
 }
+
+
+
+// for next samller element but store index in ans array :
+vector<int> nextSmallerElement(vector<int> &arr, int n) {
+        stack<int> s;
+        vector<int> ans(n);
+        ans[n - 1] = n;
+        s.push(n - 1);
+        
+        for(int i = n - 2; i >= 0; i--) {
+            int curr = arr[i];
+            while(!s.empty() && arr[s.top()] >= curr) s.pop();
+            ans[i] = s.empty() ? n : s.top();
+            s.push(i);
+        }
+        return ans;
+    }
