@@ -9,14 +9,14 @@ int findParent(vector<int>& parent, int node) {
     }
     
 void unionSet(int u, int v, vector<int>& parent, vector<int>& rank) {
-    u = findParent(parent[u]);
-    v = findParent(parent[v]);
+    u = findParent(parent, parent[u]);
+    v = findParent(parent, parent[v]);
     
     if(rank[u] < rank[v]) {
         parent[u] = v;
     }
     else if(rank[u] == rank[v]) {
-        parent[v] = u;
+        parent[v] = u; 
         rank[u]++;
     }
     else {
