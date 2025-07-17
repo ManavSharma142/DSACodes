@@ -41,3 +41,34 @@ public:
         return dfs(node, cloned);
     }
 };
+
+
+// using bfs
+Node* cloneGraph(Node* node) {
+    if (!node) return nullptr;
+
+    unordered_map<Node*, Node*> cloned;
+    queue<Node*> q;
+
+    // Step 1: Clone the starting node
+    Node* cloneStart = new Node(node->val);
+    cloned[node] = cloneStart;
+    q.push(node);
+
+    // Step 2: BFS traversal
+    while (!q.empty()) {
+        Node* curr = q.front(); q.pop();
+
+        for (Node* neighbor : curr->neighbors) {
+            if (!cloned.count(neighbor)) {
+                // Clone neighbor
+                cloned[neighbor] = new Node(neighbor->val);
+                q.push(neighbor);
+            }
+            // Connect cloned neighbor to current clone
+            cloned[curr]->neighbors.push_back(cloned[neighbor]);
+        }
+    }
+
+    return cloneStart;
+}
