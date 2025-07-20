@@ -22,7 +22,7 @@ class Solution {
                             return;
                         }
                     }
-                    
+                    // back edge condition
                     else low[node] = min(low[node], disc[i]);
                 }
     }

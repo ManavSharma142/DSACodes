@@ -16,7 +16,7 @@ class Solution {
             int mini = INT_MAX;
             int u;
             // find min node
-            for(int v = 0; v <V; v++) {
+            for(int v = 0; v < V; v++) {
                 if(mst[v] == false && key[v] < mini) {
                     u = v;
                     mini = key[v];

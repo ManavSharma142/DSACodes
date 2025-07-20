@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-
 class Solution {
   public:
     bool isSafe(int n, int m, int x, int y, vector<vector<char>>& grid, vector<vector<bool>>& vis) {
