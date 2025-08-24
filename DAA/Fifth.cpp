@@ -17,17 +17,14 @@ Node* swapSecondAndLast(Node*& head) {
     if(!head || !head->next || !head->next->next) return head; 
 
     Node* second = head->next;
-    Node* afterSecond = second->next;
-
-    second->next = NULL;
     Node* Secondlast = head;
-    while(Secondlast->next->next) Secondlast = Secondlast->next; 
+    while(Secondlast->next->next) Secondlast = Secondlast->next;
     Node* last = Secondlast->next;
-    Secondlast->next = NULL;
-
+    
     head->next = last;
-    last->next = afterSecond;
+    last->next = second->next;
     Secondlast->next = second;
+    second->next = NULL;
 
     return head;   
 }
@@ -35,7 +32,6 @@ void InsertatTail(Node* &tail , int d){
     Node* temp = new Node(d);
     tail -> next = temp;
     tail = temp;
-
 }
 void printLL(Node* head) {
     if(!head) return ;
@@ -60,7 +56,7 @@ int main() {
     printLL(head);
     cout << endl;
 
-    head = swapSecondAndLast(head);
+    swapSecondAndLast(head);
     printLL(head);
 
     return 0;
