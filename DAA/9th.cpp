@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+// Find the minimum spanning tree using Kruskal's algorithm
+#include<bits/stdc++.h>
 using namespace std;
 class Solution {
   public:
@@ -54,11 +55,10 @@ class Solution {
         return minWeight;
         
     }
-};
+};  
 int main() {
     int v = 3;
     vector<vector<int>> edges = { {0, 1, 5}, {1, 2, 3}, {0, 2, 1} };
-    
     Solution obj;
     cout << obj.kruskalsMST(v, edges) << endl;
     return 0;

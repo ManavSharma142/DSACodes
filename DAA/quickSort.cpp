@@ -1,6 +1,6 @@
 #include <bits/stdc++.h> 
 using namespace std;
-int partition(vector<int>& arr ,int s , int e ){
+int partition(vector<int>& arr ,int s , int e ) {
     int pivot = arr[s];
     int cnt=0;
     for (int i = s+1  ; i <= e ; i++){
@@ -27,7 +27,7 @@ int partition(vector<int>& arr ,int s , int e ){
     }
     return pivotindex;
 }
-void quickSort1(vector<int>& arr , int s , int e ){
+void quickSort1(vector<int>& arr , int s , int e ) {
     //base case
     if ( s>=e ){
         return ;

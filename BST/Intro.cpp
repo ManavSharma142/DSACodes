@@ -37,9 +37,9 @@ public:
             }
             // only left child exists
             else if(!root->right && root->left) {
-                TreeNode* left = root->left;
+                TreeNode* temp = root->left;
                 delete root;
-                return left;
+                return temp;
             }
             // leaf node
             else {
@@ -60,3 +60,43 @@ public:
         return delUtil(root, key);
     }
 };
+
+TreeNode* insertIntoBST(TreeNode* root , int data){
+    //base case
+    if(root == NULL ){
+        root= new TreeNode(data);
+        return root;
+    }
+    if(data>root->val){
+        //right me insert
+        root->right = insertIntoBST(root->right , data);
+    }
+    else{
+        //left me insert
+        root->left = insertIntoBST(root->left , data);
+    }
+    return root ;
+}
+void levelOrderTraversal(TreeNode* root){
+    queue<TreeNode*> q;
+    q.push(root);
+    q.push(NULL);
+    while(!q.empty()){
+        TreeNode* temp = q.front();
+        q.pop();
+        if(temp==NULL){
+            cout<<endl;
+            if(!q.empty()){
+                q.push(NULL);
+            }
+        }
+        else{
+            cout<< temp->val <<" ";
+            if ( temp->left ){
+                q.push(temp->left);
+            }
+            if ( temp->right ){
+                q.push(temp->right);
+            }
+        }
+    }
