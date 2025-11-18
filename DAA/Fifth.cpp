@@ -52,11 +52,12 @@ int main() {
     InsertatTail(tail, 3);
     InsertatTail(tail, 4);
     InsertatTail(tail, 5);
-
+    cout <<"original Link List is -> " << endl;
     printLL(head);
     cout << endl;
 
     swapSecondAndLast(head);
+    cout << "Swapped Link List is -> " << endl;
     printLL(head);
 
     return 0;

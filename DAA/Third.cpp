@@ -8,8 +8,9 @@ int fact(int n) {
 
 }
 int main() {
-    int num = 5;
+    int num;
+    cin >> num;
     int result = fact(5);
-    cout << fact(5) << endl;
+    cout << "Factorial of " << num << " is " << fact(5) << endl;
     return 0;
 }

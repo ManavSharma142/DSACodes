@@ -60,6 +60,7 @@ int main() {
     vector<vector<int>> edges = { {0, 1, 5}, {1, 2, 3}, {0, 2, 1} };
     
     Solution obj;
+    cout << "Weight of MST is - > " << endl;
     cout << obj.kruskalsMST(v, edges) << endl;
     return 0;
 }
