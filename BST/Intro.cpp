@@ -63,18 +63,16 @@ public:
 
 TreeNode* insertIntoBST(TreeNode* root , int data){
     //base case
-    if(root == NULL ){
+    if(!root){
         root= new TreeNode(data);
         return root;
     }
-    if(data>root->val){
-        //right me insert
-        root->right = insertIntoBST(root->right , data);
-    }
-    else{
-        //left me insert
-        root->left = insertIntoBST(root->left , data);
-    }
+    if(data>root->val) root->right = insertIntoBST(root->right , data);
+    //right insert
+        
+    else root->left = insertIntoBST(root->left , data);
+    //left insert
+    
     return root ;
 }
 void levelOrderTraversal(TreeNode* root){
@@ -100,3 +98,4 @@ void levelOrderTraversal(TreeNode* root){
             }
         }
     }
+}
